@@ -1,0 +1,42 @@
+  ##Enter your own crypto ticker and currency
+#!/usr/bin/python3
+#https://www.cryptocompare.com/coins/guides/how-to-use-our-api/
+#api key     
+#https://www.youtube.com/watch?v=qq0gbTHBI9o
+#pip install cryptocompare
+import cryptocompare
+import pandas as pd
+import requests
+from datetime import datetime
+df0=[0]
+global price
+base=input(' Enter Symbol: ')   #enter crypto ticker
+quote=input(' Enter Currency: ')
+def base0(base,quote):
+  #enter currency ticker
+    price = cryptocompare.get_price(base, quote)
+    
+    df0=pd.DataFrame(price)  #create dataframe
+    #print(df0)
+    return price
+
+base0(base,quote)
+df0 = [base0]
+print(df0)
+
+
+def base1(base,quote):
+  #enter currency ticker
+    price = cryptocompare.get_price(base, quote)
+    
+    df=pd.DataFrame(price)  #create dataframe
+    #print(df0)
+    return price
+
+base1(base,quote)
+df = [base1]
+
+print(df)
+#base()
+
+
